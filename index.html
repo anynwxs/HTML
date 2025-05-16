@@ -4,32 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html</title>
-</head>
-<body>
-    <div>
-        <button class="sim" type="submit">SIM</button>
-    </div>
-    <div>
-        <button class="nao" type="submit">ñ</button>
-    </div>
     <style>
-        body{
-            background-color: black;
+        body { 
+            background: black; 
         }
-        button{
-            background-color: aliceblue;
+        button { 
+            background: aliceblue; 
+            position: absolute; 
         }
-        .sim{
-            font-size: 90px;
-            height: 100px;
-            width: 200px;
+        .sim { 
+            font-size: 90px; 
+            height: 100px; 
+            width: 200px; 
         }
-        .nao{
-            cursor: none;
-            font-size: 16px;
-            height: 20px;
-            width: 40px;
+        .nao { 
+            font-size: 16px; 
+            height: 20px; 
+            width: 40px; 
         }
     </style>
+</head>
+<body>
+    <button class="sim" type="submit">SIM</button>
+    <button class="nao" type="submit">ñ</button>
+    <script>
+        const botao = document.querySelector(".nao");
+        botao.onmouseover = () => {
+            botao.style.left = Math.random() * (window.innerWidth - botao.clientWidth) + "px";
+            botao.style.top = Math.random() * (window.innerHeight - botao.clientHeight) + "px";
+        };
+    </script>
 </body>
 </html>
